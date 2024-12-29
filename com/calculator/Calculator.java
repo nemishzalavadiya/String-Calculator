@@ -8,6 +8,7 @@ public class Calculator {
         testAdd_EmptyString();
         testAdd_SingleNumberString();
         testAdd_TwoNumberString();
+        testAdd_MultipleNumberString();
     }
 
     public static void testAdd_EmptyString() {
@@ -26,5 +27,11 @@ public class Calculator {
         // initialise string calculator reference
         StringCalculator calculator = new StringCalculatorImpl();
         assert calculator.add("1,2") == 3;
+    }
+
+    public static void testAdd_MultipleNumberString() {
+        // initialise string calculator reference
+        StringCalculator calculator = new StringCalculatorImpl();
+        assert calculator.add("1,2,3,4,5") == 15;
     }
 }
