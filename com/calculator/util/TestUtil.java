@@ -10,36 +10,44 @@ public class TestUtil {
     public static StringCalculator calculator = new StringCalculatorImpl();
 
     public static void task1(){
-        testAdd_EmptyString();
-        testAdd_SingleNumberString();
-        testAdd_TwoNumberString();
+        testAddEmptyString();
+        testAddSingleNumberString();
+        testAddTwoNumberString();
     }
 
     public static void task2(){
-        testAdd_MultipleNumberString();
+        testAddMultipleNumberString();
     }
 
     public static void task3(){
-        testAdd_AllowNewLineAsDelimiter();
+        testAddAllowNewLineAsDelimiter();
     }
 
-    private static void testAdd_EmptyString() {
+    public static void task4(){
+        testAddCustomDefaultDelimiter();
+    }
+
+    private static void testAddEmptyString() {
         AssertUtil.assertResponse(calculator.add(""),0);
     }
 
-    private static void testAdd_SingleNumberString() {
+    private static void testAddSingleNumberString() {
         AssertUtil.assertResponse(calculator.add("1"),1);
     }
 
-    private static void testAdd_TwoNumberString() {
+    private static void testAddTwoNumberString() {
         AssertUtil.assertResponse(calculator.add("1,2"),3);
     }
 
-    private static void testAdd_MultipleNumberString() {
+    private static void testAddMultipleNumberString() {
         AssertUtil.assertResponse(calculator.add("1,2,3,4,5"),15);
     }
 
-    private static void testAdd_AllowNewLineAsDelimiter() {
+    private static void testAddAllowNewLineAsDelimiter() {
         AssertUtil.assertResponse(calculator.add("1\n2,3"),6);
+    }
+
+    private static void testAddCustomDefaultDelimiter() {
+        AssertUtil.assertResponse(calculator.add("//;\n1;2"),3);
     }
 }
