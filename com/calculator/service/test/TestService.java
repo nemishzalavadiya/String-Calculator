@@ -14,6 +14,7 @@ public class TestService {
     this.task2();
     this.task3();
     this.task4();
+    // commented as this will throw exception and rest will not execute
     //    this.task5();
     //    this.task6();
     this.task7();
@@ -24,49 +25,49 @@ public class TestService {
     this.task12();
   }
 
-  public void task1() {
+  private void task1() {
     testAddEmptyString();
     testAddSingleNumberString();
     testAddTwoNumberString();
   }
 
-  public void task2() {
+  private void task2() {
     testAddMultipleNumberString();
   }
 
-  public void task3() {
+  private void task3() {
     testAddAllowNewLineAsDelimiter();
   }
 
-  public void task4() {
+  private void task4() {
     testAddCustomDefaultDelimiter();
   }
 
-  public void task5() {
+  private void task5() {
     testAddNegativeNumber();
   }
 
-  public void task6() {
+  private void task6() {
     testAddNegativeNumbers();
   }
 
-  public void task7() {
+  private void task7() {
     testAddAndGetCalledCount();
   }
 
-  public void task9() {
+  private void task9() {
     testAddNumberGreaterThanThousandIgnored();
   }
 
-  public void task10() {
+  private void task10() {
     testAddCustomDelimiterOfAnyLength();
   }
 
-  public void task11() {
+  private void task11() {
     testAddMultipleCustomDelimiterOfSingleLength();
   }
 
-  public void task12() {
+  private void task12() {
     testAddMultipleCustomDelimiterOfAnyLength();
   }
 
