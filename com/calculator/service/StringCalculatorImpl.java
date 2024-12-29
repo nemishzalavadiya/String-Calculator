@@ -5,7 +5,7 @@ public class StringCalculatorImpl implements StringCalculator {
     @Override
     public int add(String numbers) {
         if(numbers.isEmpty()){
-            return 1;
+            return 0;
         }
         if (numbers.contains(",")) {
             String[] parts = numbers.split(",");
