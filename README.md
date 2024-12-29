@@ -106,6 +106,6 @@ This method should return the number of times the `Add` method has been invoked.
 
 ### CMD to run the java calculator
 
-Parameter -ea to be used for enabling assert exceptions.
+Parameter -ea or -enableassertions to be used for enabling assert exceptions.
 
 `java -ea -classpath ./out/production/String-Calculator com.calculator.Calculator`
