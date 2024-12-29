@@ -19,6 +19,10 @@ public class TestUtil {
         testAdd_MultipleNumberString();
     }
 
+    public static void task3(){
+        testAdd_AllowNewLineAsDelimiter();
+    }
+
     private static void testAdd_EmptyString() {
         AssertUtil.assertResponse(calculator.add(""),0);
     }
@@ -33,5 +37,9 @@ public class TestUtil {
 
     private static void testAdd_MultipleNumberString() {
         AssertUtil.assertResponse(calculator.add("1,2,3,4,5"),15);
+    }
+
+    private static void testAdd_AllowNewLineAsDelimiter() {
+        AssertUtil.assertResponse(calculator.add("1\n2,3"),6);
     }
 }
