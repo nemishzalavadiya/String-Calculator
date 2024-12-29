@@ -103,5 +103,7 @@ public class TestService {
     AssertUtil.assertResponse(stringCalculator.getCalledCount(), 3);
   }
 
-  private void testAddNumberGreaterThanThousandIgnored() {}
+  private void testAddNumberGreaterThanThousandIgnored() {
+    AssertUtil.assertResponse(calculator.add("//;\n2;1001"), 2);
+  }
 }

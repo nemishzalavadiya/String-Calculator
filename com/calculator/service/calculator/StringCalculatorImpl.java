@@ -8,7 +8,10 @@ public class StringCalculatorImpl implements StringCalculator {
   private int calledCount = 0; // Counter to track how many times add() is called
 
   private static int getSumByDelimiter(String numbers, String delimiter) {
-    return Arrays.stream(numbers.split(delimiter)).mapToInt(Integer::parseInt).sum();
+    return Arrays.stream(numbers.split(delimiter))
+        .mapToInt(Integer::parseInt)
+        .filter(value -> value <= 1000)
+        .sum();
   }
 
   @Override
