@@ -18,6 +18,7 @@ public class TestService {
     //    this.task6();
     this.task7();
     // skip test 8 as it's only for .Net
+    this.task9();
   }
 
   public void task1() {
@@ -48,6 +49,10 @@ public class TestService {
 
   public void task7() {
     testAddAndGetCalledCount();
+  }
+
+  public void task9() {
+    testAddNumberGreaterThanThousandIgnored();
   }
 
   private void testAddEmptyString() {
@@ -87,7 +92,7 @@ public class TestService {
     StringCalculator stringCalculator = new StringCalculatorImpl();
 
     // Initially, the count should be 0
-    assert stringCalculator.getCalledCount() == 0;
+    AssertUtil.assertResponse(stringCalculator.getCalledCount(), 0);
 
     // Call add() a few times
     stringCalculator.add("1");
@@ -95,6 +100,8 @@ public class TestService {
     stringCalculator.add("//;\n1;2");
 
     // After calling add() three times, the count should be 3
-    assert stringCalculator.getCalledCount() == 3;
+    AssertUtil.assertResponse(stringCalculator.getCalledCount(), 3);
   }
+
+  private void testAddNumberGreaterThanThousandIgnored() {}
 }
