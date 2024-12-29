@@ -1,14 +1,10 @@
 package com.calculator;
 
-import com.calculator.service.StringCalculator;
-import com.calculator.service.StringCalculatorImpl;
-import com.calculator.util.TestUtil;
+import com.calculator.service.test.TestService;
 
 public class Calculator {
-    public static void main(String[] args){
-        TestUtil.task1();
-        TestUtil.task2();
-        TestUtil.task3();
-        TestUtil.task4();
-    }
+  public static void main(String[] args) {
+    TestService testService = new TestService();
+    testService.runTests();
+  }
 }
