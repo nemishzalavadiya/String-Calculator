@@ -106,4 +106,4 @@ This method should return the number of times the `Add` method has been invoked.
 
 ### CMD to run the java calculator
 
-`java -classpath ./out/production/String-Calculator com.calculator.Calculator`
+`java -ea -classpath ./out/production/String-Calculator com.calculator.Calculator`
