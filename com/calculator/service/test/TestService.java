@@ -63,11 +63,11 @@ public class TestService {
   }
 
   public void task11() {
-    testAddMultipleCustomDelimiterOfAnyLength();
+    testAddMultipleCustomDelimiterOfSingleLength();
   }
 
   public void task12() {
-    testAddMultipleCustomDelimiterOfSingleLength();
+    testAddMultipleCustomDelimiterOfAnyLength();
   }
 
   private void testAddCustomDelimiterOfAnyLength() {
