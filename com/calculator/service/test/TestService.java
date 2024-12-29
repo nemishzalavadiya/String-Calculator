@@ -21,6 +21,7 @@ public class TestService {
     this.task9();
     this.task10();
     this.task11();
+    this.task12();
   }
 
   public void task1() {
@@ -65,12 +66,20 @@ public class TestService {
     testAddMultipleCustomDelimiterOfAnyLength();
   }
 
+  public void task12() {
+    testAddMultipleCustomDelimiterOfSingleLength();
+  }
+
   private void testAddCustomDelimiterOfAnyLength() {
     AssertUtil.assertResponse(calculator.add("//[***]\n1***2***3"), 6);
   }
 
   private void testAddMultipleCustomDelimiterOfAnyLength() {
     AssertUtil.assertResponse(calculator.add("//[***][%%%]\n1***2***3%%%4"), 10);
+  }
+
+  private void testAddMultipleCustomDelimiterOfSingleLength() {
+    AssertUtil.assertResponse(calculator.add("//[*][%]\n1*2%3"), 6);
   }
 
   private void testAddEmptyString() {
