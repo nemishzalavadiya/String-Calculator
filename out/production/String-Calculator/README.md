@@ -103,3 +103,7 @@ This method should return the number of times the `Add` method has been invoked.
    Example:
     - Input: `"//[**][%%]\n1**2%%3"`
     - Output: `6`
+
+### CMD to run the java calculator
+
+`java -classpath ./out/production/String-Calculator com.calculator.Calculator`
