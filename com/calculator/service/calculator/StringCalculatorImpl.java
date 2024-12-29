@@ -1,6 +1,7 @@
 package com.calculator.service.calculator;
 
 import java.util.Arrays;
+import java.util.regex.Pattern;
 
 public class StringCalculatorImpl implements StringCalculator {
 
@@ -8,7 +9,10 @@ public class StringCalculatorImpl implements StringCalculator {
   private int calledCount = 0; // Counter to track how many times add() is called
 
   private static int getSumByDelimiter(String numbers, String delimiter) {
-    return Arrays.stream(numbers.split(delimiter))
+    // Create a regex pattern to split based on any of the delimiters
+    Pattern pattern = Pattern.compile(delimiter);
+    return Arrays.stream(pattern.split(numbers))
+        .filter(num -> !num.isEmpty())
         .mapToInt(Integer::parseInt)
         .filter(value -> value <= 1000)
         .sum();
@@ -26,7 +30,11 @@ public class StringCalculatorImpl implements StringCalculator {
     if (numbers.startsWith("//")) {
       // Extract the delimiter and the numbers
       int delimiterEndIndex = numbers.indexOf("\n");
-      String delimiter = numbers.substring(2, delimiterEndIndex); // Custom delimiter
+      String delimiterPart = numbers.substring(2, delimiterEndIndex); // Custom delimiter
+
+      // Handle multiple delimiters
+      // Regex to match multiple delimiters enclosed in []
+      String delimiter = delimiterPart.replaceAll("]\\[", "|");
 
       // Get the numbers part of the string
       String numbersPart = numbers.substring(delimiterEndIndex + 1);

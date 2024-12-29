@@ -19,6 +19,7 @@ public class TestService {
     this.task7();
     // skip test 8 as it's only for .Net
     this.task9();
+    this.task10();
   }
 
   public void task1() {
@@ -53,6 +54,14 @@ public class TestService {
 
   public void task9() {
     testAddNumberGreaterThanThousandIgnored();
+  }
+
+  public void task10() {
+    testAddCustomDelimiterOfAnyLength();
+  }
+
+  private void testAddCustomDelimiterOfAnyLength() {
+    AssertUtil.assertResponse(calculator.add("//[***]\n1***2***3"), 6);
   }
 
   private void testAddEmptyString() {
