@@ -1,12 +1,19 @@
 package com.calculator.service;
 
+import com.calculator.util.ValidationUtil;
 import java.util.Arrays;
+import java.util.List;
 
 public class StringCalculatorImpl implements StringCalculator {
 
   public static final String DELIMITER_REGEX = "[,\n]";
 
   private static int getSumByDelimiter(String numbers, String delimiter) {
+    List<Integer> parsedNumbers =
+        Arrays.stream(numbers.split(delimiter)).map(Integer::parseInt).toList();
+
+    ValidationUtil.checkForNegatives(parsedNumbers);
+
     return Arrays.stream(numbers.split(delimiter)).mapToInt(Integer::parseInt).sum();
   }
 

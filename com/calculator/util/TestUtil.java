@@ -27,6 +27,10 @@ public class TestUtil {
     testAddCustomDefaultDelimiter();
   }
 
+  public static void task5() {
+    testAddNegativeNumbers();
+  }
+
   private static void testAddEmptyString() {
     AssertUtil.assertResponse(calculator.add(""), 0);
   }
@@ -49,5 +53,9 @@ public class TestUtil {
 
   private static void testAddCustomDefaultDelimiter() {
     AssertUtil.assertResponse(calculator.add("//;\n1;2"), 3);
+  }
+
+  private static void testAddNegativeNumbers() {
+    calculator.add("//;\n-1;2");
   }
 }

@@ -8,5 +8,6 @@ public class Calculator {
     TestUtil.task2();
     TestUtil.task3();
     TestUtil.task4();
+    //    TestUtil.task5();
   }
 }
