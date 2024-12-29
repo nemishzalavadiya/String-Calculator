@@ -17,6 +17,7 @@ public class TestService {
     //    this.task5();
     //    this.task6();
     this.task7();
+    // skip test 8 as it's only for .Net
   }
 
   public void task1() {
