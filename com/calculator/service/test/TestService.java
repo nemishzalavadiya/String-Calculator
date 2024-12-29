@@ -20,6 +20,7 @@ public class TestService {
     // skip test 8 as it's only for .Net
     this.task9();
     this.task10();
+    this.task11();
   }
 
   public void task1() {
@@ -60,8 +61,16 @@ public class TestService {
     testAddCustomDelimiterOfAnyLength();
   }
 
+  public void task11() {
+    testAddMultipleCustomDelimiterOfAnyLength();
+  }
+
   private void testAddCustomDelimiterOfAnyLength() {
     AssertUtil.assertResponse(calculator.add("//[***]\n1***2***3"), 6);
+  }
+
+  private void testAddMultipleCustomDelimiterOfAnyLength() {
+    AssertUtil.assertResponse(calculator.add("//[***][%%%]\n1***2***3%%%4"), 10);
   }
 
   private void testAddEmptyString() {
