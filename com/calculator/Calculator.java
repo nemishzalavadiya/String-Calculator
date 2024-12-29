@@ -5,9 +5,17 @@ import com.calculator.service.StringCalculatorImpl;
 
 public class Calculator {
     public static void main(String[] args){
+        task1();
+        task2();
+    }
+
+    public static void task1(){
         testAdd_EmptyString();
         testAdd_SingleNumberString();
         testAdd_TwoNumberString();
+    }
+
+    public static void task2(){
         testAdd_MultipleNumberString();
     }
 
