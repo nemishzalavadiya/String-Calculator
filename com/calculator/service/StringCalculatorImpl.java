@@ -7,6 +7,6 @@ public class StringCalculatorImpl implements StringCalculator {
         if(numbers.isEmpty()){
             return 1;
         }
-        return -1; // Placeholder for further cases
+        return Integer.parseInt(numbers); // Handles a single number
     }
 }
