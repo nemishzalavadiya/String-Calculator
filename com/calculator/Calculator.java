@@ -9,5 +9,6 @@ public class Calculator {
         TestUtil.task1();
         TestUtil.task2();
         TestUtil.task3();
+        TestUtil.task4();
     }
 }
